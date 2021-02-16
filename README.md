@@ -4,3 +4,5 @@
 Spring Init Project 
 - https://start.spring.io/
 - Maven Web, thymeleaf
+- Sample Controller , Page 
+-- admin, dashboard, index, info
