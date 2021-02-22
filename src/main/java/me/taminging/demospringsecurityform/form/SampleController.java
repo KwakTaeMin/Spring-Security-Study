@@ -1,5 +1,7 @@
 package me.taminging.demospringsecurityform.form;
 
+import me.taminging.demospringsecurityform.account.AccountContext;
+import me.taminging.demospringsecurityform.account.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -13,6 +15,9 @@ public class SampleController {
 
     @Autowired
     SampleService sampleService;
+
+    @Autowired
+    AccountRepository accountRepository;
 
     @GetMapping("/")
     public String index(Model model, Principal principal){
@@ -31,6 +36,7 @@ public class SampleController {
     @GetMapping("/dashboard")
     public String dashboard(Model model, Principal principal){
         model.addAttribute("messages", "Hello " + principal.getName());
+        AccountContext.setAccount(accountRepository.findByUsername(principal.getName()));
         sampleService.dashboard();
         return "dashboard";
     }
