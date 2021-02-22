@@ -11,6 +11,8 @@ import java.security.Principal;
 @Controller
 public class SampleController {
 
+    @Autowired
+    SampleService sampleService;
 
     @GetMapping("/")
     public String index(Model model, Principal principal){
@@ -29,6 +31,7 @@ public class SampleController {
     @GetMapping("/dashboard")
     public String dashboard(Model model, Principal principal){
         model.addAttribute("messages", "Hello " + principal.getName());
+        sampleService.dashboard();
         return "dashboard";
     }
     @GetMapping("/admin")
