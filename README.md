@@ -46,6 +46,19 @@ Spring Init Project
         * WebExpressionVoter : 웹 시큐리티에서 사용하는 기본 구현체 , ROLE_XXXX 확인
         * RoleHierarchyVoter : 계층형 Role 지원 ADMIN > MANAGER > USER
 
+ FilterSecurityInterceptor
+    - AccessDecisionManager를 사용하여 Access Control 또는 예외 처리 하는 필터
+    - 대부분의 경우 FilterChainProxy의 마지막에 들어있다
+
+ExceptionTranslationFilter
+    - AccessDeniedException, AuthenticationException 처리하는 필터
+AuthenticationException
+    - UsernameAuthenticationFilter 실행
+    - AbstractSecurityInterceptor 하위 클래스에서 발생하는 예외만 처리 
+    - 그렇다면 UsernameAuthenticationFilter에서 발생한 예외는?
+AccessDeniedException
+    - 익명의 사용자 일 경우 UsernameAuthenticationFilter 실
+    - 익명의 사용자가 아니면 AccessDeniedHandler에게 위임
 
 
 
