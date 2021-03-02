@@ -68,3 +68,4 @@ WebAsyncManagerIntegrationFilter
     - PreProcess에서 SecurityContext 설정
     - PostProcess에서 SecurityContext 정리 - Clean up (초기화아니 비워둔다가 적당한 표현인 듯)
 
+스프링 시큐리티와 @Async

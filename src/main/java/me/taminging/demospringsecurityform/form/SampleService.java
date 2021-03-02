@@ -2,6 +2,8 @@ package me.taminging.demospringsecurityform.form;
 
 import me.taminging.demospringsecurityform.account.Account;
 import me.taminging.demospringsecurityform.account.AccountContext;
+import me.taminging.demospringsecurityform.common.SecurityLogger;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -28,5 +30,12 @@ public class SampleService {
 
 
 
+    }
+
+    @Async
+    public void asyncService() {
+        SecurityLogger.log("Async Service");
+        System.out.println("Async Service is Called");
+        //Async는 Security Context가 공유가 되지 않는
     }
 }
