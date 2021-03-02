@@ -94,5 +94,9 @@ LogoutFilter
     - LogoutHandler : 로그아웃 시 필요한 처리 (CSRFLogoutFilter, SecurityContextLogoutFilter)
     - LogoutSuccessHandler : 로그아웃 성공이후 처
 
+UsernamePasswordAuthenticationFilter
+    - username과 password를 통해 AuthenticationManager를 통해 인증을 시도   
+    - AuthenticationManager가 여러 AuthenticationProvider를 사용하여 인증을 시도하는데
+    - 그 중 현재는 DaoAuthenticationProvider를 사용하여 UserDetailService 방식으로 UserDetails를 가져와 password를 비교하낟.
     
 
