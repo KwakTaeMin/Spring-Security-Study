@@ -69,3 +69,13 @@ WebAsyncManagerIntegrationFilter
     - PostProcess에서 SecurityContext 정리 - Clean up (초기화아니 비워둔다가 적당한 표현인 듯)
 
 스프링 시큐리티와 @Async
+    - SecurityContextHolder.setStrategyName(SecurityContextHolder.MODE_INHERITABLETHREADLOCAL); : 하위 Thread에서도 Spring Context가 공유된다.
+    - @EnableAsync를 사용해야 @Async가 작동한다.
+
+SpringContextPersistenceFilter
+    - 여러 요청간에 Spring Context를 공유할 수 있는 기능
+    - Dashboard를 가도 다른 url에 접근하여도 Spring Context가 공유되는 것을 도와준다.
+    - SpringContextRepository에서 읽어온다. 기본적으로 Http Session에 있는 것으로 받아 Spring Context로 읽어온다.
+    - 이 필터가 설정되지 않으면 매번 인증을 해야한다.
+
+
