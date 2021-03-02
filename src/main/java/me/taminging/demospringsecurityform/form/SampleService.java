@@ -2,9 +2,6 @@ package me.taminging.demospringsecurityform.form;
 
 import me.taminging.demospringsecurityform.account.Account;
 import me.taminging.demospringsecurityform.account.AccountContext;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;

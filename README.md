@@ -22,7 +22,7 @@ Spring Init Project
    - 인증된 Authentication 객체를 SecurityContextHolder 에 넣어주는 필터
    - SecurityContextHolder.getContext().setAuthentication(authentication)과 같은 역할을 한다.
 
-  SecurityContextHolderPersistenceFilter
+  SecurityContextPersistenceFilter
     - Session을 캐시하여 여러 요청에서 authentication을 공유할 수 있는 필터
     - SecurityContextRepository를 통해 HTTP Session이 아닌 다른 곳에 저장하는 것도 가능하다.
 
@@ -52,10 +52,12 @@ Spring Init Project
 
 ExceptionTranslationFilter
     - AccessDeniedException, AuthenticationException 처리하는 필터
+
 AuthenticationException
     - UsernameAuthenticationFilter 실행
     - AbstractSecurityInterceptor 하위 클래스에서 발생하는 예외만 처리 
     - 그렇다면 UsernameAuthenticationFilter에서 발생한 예외는?
+
 AccessDeniedException
     - 익명의 사용자 일 경우 UsernameAuthenticationFilter 실
     - 익명의 사용자가 아니면 AccessDeniedHandler에게 위임
