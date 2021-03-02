@@ -90,7 +90,9 @@ CSRFFilter
     - 사용하고 싶지않은 경우 configure에서 http.csrf().disable();
     - LoginPage 만들 경우 이러한 모든 것들을 고려해야한다.
 
-
+LogoutFilter
+    - LogoutHandler : 로그아웃 시 필요한 처리 (CSRFLogoutFilter, SecurityContextLogoutFilter)
+    - LogoutSuccessHandler : 로그아웃 성공이후 처
 
     
 
