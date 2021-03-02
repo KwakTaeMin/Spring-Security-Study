@@ -62,5 +62,9 @@ AccessDeniedException
     - 익명의 사용자 일 경우 UsernameAuthenticationFilter 실
     - 익명의 사용자가 아니면 AccessDeniedHandler에게 위임
 
-
+WebAsyncManagerIntegrationFilter 
+    - SecurityContext를 동일하게 처리할 수 있도록 도와주는 Callable이여도  
+    - 즉 스레드적으로 갈려도 같은 SecurityContext로 접근하여 처리 될 수 있다
+    - PreProcess에서 SecurityContext 설정
+    - PostProcess에서 SecurityContext 정리 - Clean up (초기화아니 비워둔다가 적당한 표현인 듯)
 
