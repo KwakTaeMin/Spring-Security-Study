@@ -78,4 +78,7 @@ SpringContextPersistenceFilter
     - SpringContextRepository에서 읽어온다. 기본적으로 Http Session에 있는 것으로 받아 Spring Context로 읽어온다.
     - 이 필터가 설정되지 않으면 매번 인증을 해야한다.
 
+HeaderWriterFilter
+    - 응답 해더에 시큐리티 관련된 헤더를 추가해주는 필터
+    
 
