@@ -80,5 +80,17 @@ SpringContextPersistenceFilter
 
 HeaderWriterFilter
     - 응답 해더에 시큐리티 관련된 헤더를 추가해주는 필터
+
+CSRFFilter
+    - CSRF 어택 방지 필터
+    - CSRF 토큰을 통해 아무 도메인이나 접근하지 못하도록 제어한다.
+    - 서버에서 클라이언트에게 로그인 폼으로 CSRF 토큰을 보낸다.
+    - 로그인할 경우 CSRF 토큰으로 해당 웹사이트로 정상적인지 확인한다.
+    - 다른 웹에서 쉽게 접근하지 못하도록 방지한 토큰이다.
+    - 사용하고 싶지않은 경우 configure에서 http.csrf().disable();
+    - LoginPage 만들 경우 이러한 모든 것들을 고려해야한다.
+
+
+
     
 
