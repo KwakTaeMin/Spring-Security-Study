@@ -106,3 +106,5 @@ DefaultLoginGeneratingFilter
     - LoginPage () 사용하는 순간 Custom 한 로그인 페이지를 만드는 거라 필터가 생성되지 않는다.
 
 로그인 / 로그아웃 폼 커스텀 페이지 
+    - LoginPage () 사용하는순간 DefaultLogin/LogoutGeneratingFilter가 사라져서 구현해줘야한다.
+

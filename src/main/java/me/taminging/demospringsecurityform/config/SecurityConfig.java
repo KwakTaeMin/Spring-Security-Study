@@ -53,7 +53,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //.expressionHandler(Something())
                 .anyRequest().authenticated();
         http.formLogin()
-                .loginPage("/login");
+                .loginPage("/login")
+                .permitAll();
             //.usernameParameter("");
             //.passwordParameter("");
             //failForwardUrl
