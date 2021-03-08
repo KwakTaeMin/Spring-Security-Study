@@ -97,6 +97,12 @@ LogoutFilter
 UsernamePasswordAuthenticationFilter
     - username과 password를 통해 AuthenticationManager를 통해 인증을 시도   
     - AuthenticationManager가 여러 AuthenticationProvider를 사용하여 인증을 시도하는데
-    - 그 중 현재는 DaoAuthenticationProvider를 사용하여 UserDetailService 방식으로 UserDetails를 가져와 password를 비교하낟.
+    - 그 중 현재는 DaoAuthenticationProvider를 사용하여 UserDetailService 방식으로 UserDetails를 가져와 password를 비교한다.
     
+DefaultLoginGeneratingFilter
+    - 기본 로그인 폼 생성해주는 필
+    - Username Parameter / Password Parameter 변경
+    - FailForwardUrl / SuccessForwardUrl   
+    - LoginPage () 사용하는 순간 Custom 한 로그인 페이지를 만드는 거라 필터가 생성되지 않는다.
 
+로그인 / 로그아웃 폼 커스텀 페이지 

@@ -52,7 +52,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .accessDecisionManager(accessDecisionManager())
                 //.expressionHandler(Something())
                 .anyRequest().authenticated();
-        http.formLogin();
+        http.formLogin()
+                .loginPage("/login");
+            //.usernameParameter("");
+            //.passwordParameter("");
+            //failForwardUrl
+            //successForwardUrl
+            //loginPage
         http.httpBasic();
         http.logout()
                 .logoutUrl("/logout")
