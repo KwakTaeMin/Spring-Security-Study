@@ -108,3 +108,10 @@ DefaultLoginGeneratingFilter
 로그인 / 로그아웃 폼 커스텀 페이지 
     - LoginPage () 사용하는순간 DefaultLogin/LogoutGeneratingFilter가 사라져서 구현해줘야한다.
 
+
+BasicAuthenticationFilter
+    - Security에 httpBasic() 설정을 해놓으면 자동으로 적용
+    - username과 password를 인코딩하여 해더의 Authentication에 담아서 사용
+    - HTTPS를 사용하여 하나라도 스니핑 당하지 않도록 처리
+
+
