@@ -114,4 +114,14 @@ BasicAuthenticationFilter
     - username과 password를 인코딩하여 해더의 Authentication에 담아서 사용
     - HTTPS를 사용하여 하나라도 스니핑 당하지 않도록 처리
 
+RequestCacheAwareFilter
+    - 현재 요청과 관련 있는 캐시된 요청이 있는지 찾아서 적용하는 필터
+        - 캐시된 요청이 없다면 , 현재 요청 처리
+        - 캐시된 요청이 있다면 , 해당 캐시된 요청 처리
+    - 크게 설정하지 않는 설정
+
+SecurityContextHolderRequestAware
+    - 시큐리티 관련 서블릿 API를 구현해주는 필터 
+    - 크게 설정하지 않는 설정 
+
 
