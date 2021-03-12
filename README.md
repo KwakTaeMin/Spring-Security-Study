@@ -124,4 +124,13 @@ SecurityContextHolderRequestAware
     - 시큐리티 관련 서블릿 API를 구현해주는 필터 
     - 크게 설정하지 않는 설정 
 
+AnonymousAuthenticationFilter
+    - Security Context에 Authentication이 null이면 익명 Authentication을 만들어주고 아무일도 일어나지 않도록 한다.
+    - Null Object Pattern
+    - Null을 넣어주는게 아니라 Null 대체하는 객체를 생성하는 패
+
+SessionManagementFilter
+    - 세션 변조 방지 전략 설정 : SessionFixation
+    
+
 
