@@ -84,6 +84,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .expiredUrl("/login");// 세션 만료 시 URL 이동
                 //.invalidSessionUrl("/login");
 
+        http.rememberMe().userDetailsService(accountService).key("remember-me-sample");
+
         http.exceptionHandling()
                 .accessDeniedPage("/access-denied")
                 .accessDeniedHandler(new AccessDeniedHandler() {

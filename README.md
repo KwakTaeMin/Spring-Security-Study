@@ -135,3 +135,4 @@ SessionManagementFilter
 ExceptionTranslateFilter
     - 
 
+FilterSecurityInterceptor
