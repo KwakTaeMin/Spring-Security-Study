@@ -4,13 +4,21 @@ import me.taminging.demospringsecurityform.account.Account;
 import me.taminging.demospringsecurityform.account.AccountContext;
 import me.taminging.demospringsecurityform.common.SecurityLogger;
 import org.springframework.scheduling.annotation.Async;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PostAuthorize;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.security.RolesAllowed;
 import java.util.Collection;
 
 @Service
 public class SampleService {
 
+    //@Secured("ROLE_USER")
+    //@PreAuthorize("hasRole('USER')")
+    //@PostAuthorize("hasRole('USER')")
+    @RolesAllowed("ROLE_USER")
     public void dashboard() {
         // Thread Local
         Account account = AccountContext.getAccount();
