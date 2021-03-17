@@ -6,5 +6,13 @@
 </head>
 <body>
     <h1 th:text="${messages}">Hello</h1>
+    <div th:if="${#authorization.expr('isAuthentication()')}">
+        <h2 th:text="${#authorization.Name}}"> Name </h2>
+        <a herf="/logout" th:herf="@{/logout}">Logout</a>
+    </div>
+    <div th:unless="${#authorization.expr('isAuthentication()')}">
+        <a herf="/login" th:herf="@{/login}">Login</a>
+    </div>
+
 </body>
 </html>
