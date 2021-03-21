@@ -1,9 +1,13 @@
 package me.taminging.demospringsecurityform.form;
 
+import me.taminging.demospringsecurityform.account.Account;
 import me.taminging.demospringsecurityform.account.AccountContext;
 import me.taminging.demospringsecurityform.account.AccountRepository;
+import me.taminging.demospringsecurityform.account.UserAccount;
+import me.taminging.demospringsecurityform.common.CurrentUser;
 import me.taminging.demospringsecurityform.common.SecurityLogger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -24,12 +28,12 @@ public class SampleController {
     AccountRepository accountRepository;
 
     @GetMapping("/")
-    public String index(Model model, Principal principal){
-        if(principal == null)
+    public String index(Model model, @CurrentUser Account account) {
+        if(account == null)
             model.addAttribute("messages", "Hello Spring Security");
-        else
-            model.addAttribute("messages", "Hello,"  + principal.getName());
-
+        else {
+            model.addAttribute("messages", "Hello," + account.getUsername());
+        }
         return "index";
     }
     @GetMapping("/info")
