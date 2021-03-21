@@ -4,6 +4,7 @@ import me.taminging.demospringsecurityform.account.Account;
 import me.taminging.demospringsecurityform.account.AccountContext;
 import me.taminging.demospringsecurityform.account.AccountRepository;
 import me.taminging.demospringsecurityform.account.UserAccount;
+import me.taminging.demospringsecurityform.book.BookRepository;
 import me.taminging.demospringsecurityform.common.CurrentUser;
 import me.taminging.demospringsecurityform.common.SecurityLogger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,9 @@ public class SampleController {
 
     @Autowired
     AccountRepository accountRepository;
+
+    @Autowired
+    BookRepository bookRepository;
 
     @GetMapping("/")
     public String index(Model model, @CurrentUser Account account) {
@@ -56,6 +60,7 @@ public class SampleController {
     @GetMapping("/user")
     public String user(Model model, Principal principal){
         model.addAttribute("messages", "Hello User, " + principal.getName());
+        model.addAttribute("books", bookRepository.findCurrentUserBooks());
         return "user";
     }
 
